@@ -1,0 +1,31 @@
+docker-compose up -d
+
+docker ps
+
+
+Access Kafka shell:
+
+
+docker exec -it kafka bash
+
+Create a topic:
+
+kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test-topic
+
+List topics:
+
+kafka-topics --list --zookeeper zookeeper:2181
+
+
+Run Producer
+
+kafka-console-producer --broker-list localhost:9092 --topic test-topic
+
+Run Consumer
+
+docker exec -it kafka bash
+
+kafka-console-consumer --bootstrap-server localhost:9092 --topic test-topic --from-beginning
+
+
+
