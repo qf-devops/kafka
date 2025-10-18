@@ -28,4 +28,13 @@ docker exec -it kafka bash
 kafka-console-consumer --bootstrap-server localhost:9092 --topic test-topic --from-beginning
 
 
+virtual env:
+
+python3 -m venv venv
+
+source venv/bin/activate
+
+pip install kafka-python
+
+
 
