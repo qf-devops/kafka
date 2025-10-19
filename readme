@@ -42,3 +42,13 @@ kafka-acls.sh \
   --command-config /home/ec2-user/client.properties \
   --list
 
+
+docker run -d -p 8080:8080 \
+  -e KAFKA_BROKERS="b-1.mycluster.kafka.eu-central-1.amazonaws.com:9096,b-2.mycluster.kafka.eu-central-1.amazonaws.com:9096" \
+  -e KAFKA_TLS_ENABLED=true \
+  -e KAFKA_SASL_ENABLED=true \
+  -e KAFKA_SASL_MECHANISM=SCRAM-SHA-512 \
+  -e KAFKA_SASL_USER=adminuser \
+  -e KAFKA_SASL_PASSWORD=AdminPassword123! \
+  docker.redpanda.com/vectorized/console:latest
+
