@@ -37,4 +37,8 @@ source venv/bin/activate
 pip install kafka-python
 
 
+kafka-acls.sh \
+  --bootstrap-server b-1.cluster.kafka.eu-central-1.amazonaws.com:9096 \
+  --command-config /home/ec2-user/client.properties \
+  --list
 
